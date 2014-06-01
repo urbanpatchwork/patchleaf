@@ -22,3 +22,6 @@ body {
 .navbar {
     min-height: 30px;
 }
+.myUniqueNavClass {
+    color: white;
+}
