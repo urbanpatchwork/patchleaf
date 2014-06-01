@@ -2,6 +2,10 @@ body {
   padding-top: 0px;
 }
 
+a {
+	color: #696969;
+}
+
 .img-brand {
   margin: 0px 10px 0px 10px;
 }
@@ -21,7 +25,12 @@ body {
 }
 .navbar {
     min-height: 30px;
+    color: white;
 }
 .myUniqueNavClass {
     color: white;
+}
+
+.dark-text {
+	color: gray;
 }
