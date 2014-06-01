@@ -1,0 +1,17 @@
+body {
+  padding-top: 70px;
+}
+
+.img-brand {
+  margin-bottom: 10px;
+}
+
+.navbar-default .navbar-collapse {
+  background-color: #FFFFFF;
+}
+
+@media (min-width: 768px){
+  .navbar-nav {
+    float: right;
+  }
+}
