@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <title>PatchLeaf</title>
 
-    <link rel="stylesheet" href="assets/bootstrap-3.1.1/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/bootstrap-3.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/font-awesome-4.1.0/css/font-awesome.css">
     <link rel="stylesheet" href="assets/leaflet-0.7.2/leaflet.css">
     <link rel="stylesheet" href="assets/leaflet-sidebar-0.1.5/L.Control.Sidebar.css">
@@ -49,17 +49,17 @@
           </div>
         </form>
         <ul class="nav navbar-nav">
-          <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="$('#aboutModal').modal('show'); return false;"><i class="fa fa-question-circle pull-right" style="color: white"></i>&nbsp;&nbsp;About</a></li>
+          <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="$('#aboutModal').modal('show'); return false;"><i class="fa fa-question-circle center" style="color: white"></i>&nbsp;&nbsp;About</a></li>
           <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="sidebar.toggle(); return false;"><i class="fa fa-list pull-right" style="color: white"></i>&nbsp;&nbsp;View List</a></li>
           <li class="dropdown">
-            <a id="toolsDrop" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-globe pull-right" style="color: white"></i>&nbsp;&nbsp;Tools <b class="caret"></b></a>
+            <a id="toolsDrop" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-globe center" style="color: white"></i>&nbsp;&nbsp;Tools <b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="map.fitBounds(boroughs.getBounds()); return false;"><i class="fa fa-arrows-alt"></i>&nbsp;&nbsp;Zoom To Full Extent</a></li>
               <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="$('#legendModal').modal('show'); return false;"><i class="fa fa-picture-o"></i>&nbsp;&nbsp;Show Legend</a></li>
             </ul>
           </li>
           <li class="dropdown">
-              <a class="dropdown-toggle" id="downloadDrop" href="#" role="button" data-toggle="dropdown"><i class="fa fa-cloud-download pull-right" style="color: white"></i>&nbsp;&nbsp;Download <b class="caret"></b></a>
+              <a class="dropdown-toggle" id="downloadDrop" href="#" role="button" data-toggle="dropdown"><i class="fa fa-cloud-download center" style="color: white"></i>&nbsp;&nbsp;Download <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="data/boroughs.geojson" download="boroughs.geojson" target="_blank" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-download"></i>&nbsp;&nbsp;Boroughs</a></li>
                 <li><a href="data/subways.geojson" download="subways.geojson" target="_blank" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-download"></i>&nbsp;&nbsp;Subway Lines</a></li>
