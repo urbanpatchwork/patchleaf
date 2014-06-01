@@ -130,3 +130,7 @@ input[type="radio"], input[type="checkbox"] {
     display: none !important;
   }
 }
+
+.img-brand {
+  margin-bottom: 10px;
+}
