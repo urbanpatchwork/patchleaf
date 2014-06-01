@@ -142,6 +142,5 @@ input[type="radio"], input[type="checkbox"] {
 @media (min-width: 768px){
   .navbar-nav {
     float: right;
-    text-align: center
   }
 }
