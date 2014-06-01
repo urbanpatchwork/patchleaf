@@ -1,5 +1,5 @@
 body {
-  padding-top: 70px;
+  padding-top: 0px;
 }
 
 .img-brand {
@@ -18,4 +18,7 @@ body {
 
 .navbar-btn {
 	margin: 25px 10px 0px 10px;
+}
+.navbar {
+    min-height: 30px;
 }
