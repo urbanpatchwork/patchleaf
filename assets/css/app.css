@@ -4,7 +4,7 @@ html, body, #map {
   overflow: hidden;
 }
 body {
-  padding-top: 50px;
+  padding-top: 70px;
 }
 input[type="radio"], input[type="checkbox"] {
   margin: 0;
@@ -128,5 +128,19 @@ input[type="radio"], input[type="checkbox"] {
   }
   .leaflet-control-container {
     display: none !important;
+  }
+}
+
+.img-brand {
+  margin-bottom: 10px;
+}
+
+.navbar-default .navbar-collapse {
+  background-color: #FFFFFF;
+}
+
+@media (min-width: 768px){
+  .navbar-nav {
+    float: right;
   }
 }
