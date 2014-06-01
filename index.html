@@ -50,24 +50,25 @@
         </form>
         <ul class="nav navbar-nav">
           <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="$('#aboutModal').modal('show'); return false;"><i class="fa fa-question-circle" style="color: white"></i>&nbsp;&nbsp;About</a></li>
-          <li class="dropdown">
-            <a id="toolsDrop" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-globe" style="color: white"></i>&nbsp;&nbsp;Tools <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="map.fitBounds(boroughs.getBounds()); return false;"><i class="fa fa-arrows-alt"></i>&nbsp;&nbsp;Zoom To Full Extent</a></li>
-              <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="$('#legendModal').modal('show'); return false;"><i class="fa fa-picture-o"></i>&nbsp;&nbsp;Show Legend</a></li>
-              <li class="divider hidden-xs"></li>
-              <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="$('#loginModal').modal('show'); return false;"><i class="fa fa-user"></i>&nbsp;&nbsp;Login</a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-              <a class="dropdown-toggle" id="downloadDrop" href="#" role="button" data-toggle="dropdown"><i class="fa fa-cloud-download" style="color: white"></i>&nbsp;&nbsp;Download <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="data/boroughs.geojson" download="boroughs.geojson" target="_blank" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-download"></i>&nbsp;&nbsp;Boroughs</a></li>
-                <li><a href="data/subways.geojson" download="subways.geojson" target="_blank" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-download"></i>&nbsp;&nbsp;Subway Lines</a></li>
-                <li><a href="data/DOITT_THEATER_01_13SEPT2010.geojson" download="theaters.geojson" target="_blank" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-download"></i>&nbsp;&nbsp;Theaters</a></li>
-                <li><a href="data/DOITT_MUSEUM_01_13SEPT2010.geojson" download="museums.geojson" target="_blank" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-download"></i>&nbsp;&nbsp;Museums</a></li>
-              </ul>
-          </li>
+          <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="$('#addProjectModal').modal('show'); return false;"><i class="fa fa-question-circle" style="color: white"></i>&nbsp;&nbsp;Add a project</a></li>
+          <!--<li class="dropdown">-->
+            <!--<a id="toolsDrop" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-globe" style="color: white"></i>&nbsp;&nbsp;Tools <b class="caret"></b></a>-->
+            <!--<ul class="dropdown-menu">-->
+              <!--<li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="map.fitBounds(boroughs.getBounds()); return false;"><i class="fa fa-arrows-alt"></i>&nbsp;&nbsp;Zoom To Full Extent</a></li>-->
+              <!--<li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="$('#legendModal').modal('show'); return false;"><i class="fa fa-picture-o"></i>&nbsp;&nbsp;Show Legend</a></li>-->
+              <!--<li class="divider hidden-xs"></li>-->
+              <!--<li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="$('#loginModal').modal('show'); return false;"><i class="fa fa-user"></i>&nbsp;&nbsp;Login</a></li>-->
+            <!--</ul>-->
+          <!--</li>-->
+          <!--<li class="dropdown">-->
+              <!--<a class="dropdown-toggle" id="downloadDrop" href="#" role="button" data-toggle="dropdown"><i class="fa fa-cloud-download" style="color: white"></i>&nbsp;&nbsp;Download <b class="caret"></b></a>-->
+              <!--<ul class="dropdown-menu">-->
+                <!--<li><a href="data/boroughs.geojson" download="boroughs.geojson" target="_blank" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-download"></i>&nbsp;&nbsp;Boroughs</a></li>-->
+                <!--<li><a href="data/subways.geojson" download="subways.geojson" target="_blank" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-download"></i>&nbsp;&nbsp;Subway Lines</a></li>-->
+                <!--<li><a href="data/DOITT_THEATER_01_13SEPT2010.geojson" download="theaters.geojson" target="_blank" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-download"></i>&nbsp;&nbsp;Theaters</a></li>-->
+                <!--<li><a href="data/DOITT_MUSEUM_01_13SEPT2010.geojson" download="museums.geojson" target="_blank" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-download"></i>&nbsp;&nbsp;Museums</a></li>-->
+              <!--</ul>-->
+          <!--</li>-->
           <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" onclick="sidebar.toggle(); return false;"><i class="fa fa-list" style="color: white"></i>&nbsp;&nbsp;Sidebar</a></li>
         </ul>
       </div><!--/.navbar-collapse -->
@@ -134,6 +135,251 @@
         </div>
       </div>
     </div>
+
+    <div class="modal fade" id="addProjectModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button class="close" type="button" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Add a project!</h4>
+          </div>
+          <div class="modal-body">
+            <ul class="nav nav-tabs" id="aboutTabs">
+              <!--<li class="active"><a href="#about" data-toggle="tab"><i class="fa fa-question-circle"></i>&nbsp;About the project</a></li>-->
+              <li class="active"><a href="#addPublicProjectModalTab" data-toggle="tab"><i class="fa fa-tree"></i>&nbsp;Add a public garden project</a></li>
+              <li ><a href="#addForagingProjectModalTab" data-toggle="tab"><i class="fa fa-tree"></i>&nbsp;Add a foraging project</a></li>
+              <li ><a href="#addPrivateProjectModalTab" data-toggle="tab"><i class="fa fa-tree"></i>&nbsp;Add a private garden project</a></li>
+              <!--<li><a href="#disclaimer" data-toggle="tab"><i class="fa fa-exclamation-circle"></i>&nbsp;Disclaimer</a></li>-->
+              <!--<li class="dropdown">-->
+                <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-globe"></i>&nbsp;Metadata <b class="caret"></b></a>-->
+                <!--<ul class="dropdown-menu">-->
+                  <!--<li><a href="#boroughs-tab" data-toggle="tab">Boroughs</a></li>-->
+                  <!--<li><a href="#subway-lines-tab" data-toggle="tab">Subway Lines</a></li>-->
+                  <!--<li><a href="#theaters-tab" data-toggle="tab">Theaters</a></li>-->
+                  <!--<li><a href="#museums-tab" data-toggle="tab">Museums</a></li>-->
+                <!--</ul>-->
+              <!--</li>-->
+            </ul>
+            <div class="tab-content" id="aboutTabsContent" style="padding-top: 10px;">
+              <!--<div class="tab-pane fade active in" id="about">-->
+                <!--<p>A simple, responsive template for building web mapping applications with <a href="http://getbootstrap.com/">Bootstrap 3</a>, <a href="http://leafletjs.com/" target="_blank">Leaflet</a>, and <a href="http://twitter.github.io/typeahead.js/" target="_blank">typeahead.js</a>. Open source, MIT licensed, and available on <a href="https://github.com/bmcbride/bootleaf" target="_blank">GitHub</a>.</p>-->
+                <!--<div class="panel panel-primary">-->
+                  <!--<div class="panel-heading">Features</div>-->
+                  <!--<ul class="list-group">-->
+                    <!--<li class="list-group-item">Fullscreen mobile-friendly map template with responsive navbar and modal placeholders</li>-->
+                    <!--<li class="list-group-item">Integration of Bootstrap tables into Leaflet popups</li>-->
+                    <!--<li class="list-group-item">Logic for minimizing layer control and switching to modal popups on small screens</li>-->
+                    <!--<li class="list-group-item">jQuery loading of external GeoJSON files</li>-->
+                    <!--<li class="list-group-item">Logical multiple layer marker clustering via the <a href="https://github.com/Leaflet/Leaflet.markercluster" target="_blank">leaflet marker cluster</a> plugin</li>-->
+                    <!--<li class="list-group-item">Elegant client-side multi-layer feature search with autocomplete using <a href="http://twitter.github.io/typeahead.js/" target="_blank">typeahead.js</a></li>-->
+                    <!--<li class="list-group-item">Responsive sidebar functionality via the <a href="https://github.com/turbo87/leaflet-sidebar/" target="_blank">leaflet-sidebar</a> plugin</li>-->
+                    <!--<li class="list-group-item">Marker icons included in grouped layer control via the <a href="https://github.com/ismyrnow/Leaflet.groupedlayercontrol" target="_blank">grouped layer control</a> plugin</li>-->
+                  <!--</ul>-->
+                <!--</div>-->
+              <!--</div>-->
+              <!--<div id="disclaimer" class="tab-pane fade text-danger">-->
+                <!--<p>The data provided on this site is for informational and planning purposes only.</p>-->
+                <!--<p>Absolutely no accuracy or completeness guarantee is implied or intended. All information on this map is subject to such variations and corrections as might result from a complete title search and/or accurate field survey.</p>-->
+              <!--</div>-->
+              <div class="tab-pane fade active in" id="addPublicProjectModalTab">
+                <form id="add-public-project">
+                  <div class="well well-sm">
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label for="category">Category:</label>
+                          <input type="text" class="form-control" id="category">
+                        </div>
+                      <div class="form-group">
+                        <label for="project-coordinator-name">Contact Name:</label>
+                        <input type="text" class="form-control" id="project-coordinator-name"></textarea>
+                      </div>
+                      <div class="form-group">
+                        <label for="project-coordinator-email">Contact Email:</label>
+                        <input type="text" class="form-control" id="project-coordinator-email"></textarea>
+                      </div>
+                        <div class="form-group">
+                          <label for="location">Location:</label>
+                          <input type="text" class="form-control" id="location">
+                        </div>
+                        <div class="form-group">
+                          <label for="zipcode">Zipcode:</label>
+                          <input type="text" class="form-control" id="zipcode">
+                        </div>
+                      </div>
+                      <div class="col-md-8">
+                        <div class="form-group">
+                          <label for="description">Description:</label>
+                          <input type="text" class="form-control" id="description">
+                        </div>
+                        <div class="form-group">
+                          <label for="poundage">Pounds produced Annually:</label>
+                          <input type="text" class="form-control" id="poundage">
+                        </div>
+                        <!--<div class="form-group">-->
+                      <div class="form-group">
+                        <div class="input-group">
+                            <input type="checkbox" id="volunteeropp">
+                            Volunteer Oppurtunities
+                        </div><!-- /input-group -->
+                        <div class="input-group" id="membershipopp">
+                            <input type="checkbox">
+                            Membership Oppurtunities
+                        </div><!-- /input-group -->
+                        <div class="input-group" id="productsavailable">
+                            <input type="checkbox">
+                            Products Available
+                        </div><!-- /input-group -->
+                        <div class="input-group" id="educationavailable">
+                            <input type="checkbox">
+                            Education Available
+                        </div><!-- /input-group -->
+                        <p>
+                          <button type="submit" class="btn btn-primary pull-right" data-dismiss="modal">Submit</button>
+                        </p>
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="tab-pane fade" id="addForagingProjectModalTab">
+                <form id="add-foraging-project">
+                  <div class="well well-sm">
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label for="category">Category:</label>
+                          <input type="text" class="form-control" id="category">
+                        </div>
+                      <div class="form-group">
+                        <label for="plant-name">Plant Name:</label>
+                        <input type="text" class="form-control" id="plant-name"></textarea>
+                      </div>
+                      <div class="form-group">
+                        <label for="tags">Keywords/Tags:</label>
+                        <input type="text" class="form-control" id="tags"></textarea>
+                      </div>
+                      <div class="form-group">
+                        <label for="ripe-season">Ripe Season:</label>
+                        <input type="text" class="form-control" id="ripe-season"></textarea>
+                      </div>
+                      <div class="form-group">
+                        <label for="number-of-plants">Number of Plants:</label>
+                        <input type="text" class="form-control" id="number-of-plants"></textarea>
+                      </div>
+                      <div class="form-group">
+                        <label for="project-coordinator-name">Contact Name:</label>
+                        <input type="text" class="form-control" id="project-coordinator-name"></textarea>
+                      </div>
+                      <div class="form-group">
+                        <label for="project-coordinator-email">Contact Email:</label>
+                        <input type="text" class="form-control" id="project-coordinator-email"></textarea>
+                      </div>
+                        <div class="form-group">
+                          <label for="location">Location:</label>
+                          <input type="text" class="form-control" id="location">
+                        </div>
+                        <div class="form-group">
+                          <label for="zipcode">Zipcode:</label>
+                          <input type="text" class="form-control" id="zipcode">
+                        </div>
+                      </div>
+                      <div class="col-md-8">
+                        <div class="form-group">
+                          <label for="description">Description:</label>
+                          <input type="text" class="form-control" id="description">
+                        </div>
+                        <div class="form-group">
+                          <label for="poundage">Pounds produced Annually:</label>
+                          <input type="text" class="form-control" id="poundage">
+                        </div>
+                        <!--<div class="form-group">-->
+                      <div class="form-group">
+                        <div class="input-group">
+                            <input type="checkbox" id="publicly-accessible">
+                            This is public land, or I own this land and give permission for the public to forage here *
+                        </div><!-- /input-group -->
+                        <p>
+                          <button type="submit" class="btn btn-primary pull-right" data-dismiss="modal">Submit</button>
+                        </p>
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="tab-pane fade" id="addPrivateProjectModalTab">
+                <form id="add-private-project">
+                  <div class="well well-sm">
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label for="category">Category:</label>
+                          <input type="text" class="form-control" id="category">
+                        </div>
+                      <div class="form-group">
+                        <label for="tags">Keywords/Tags:</label>
+                        <input type="text" class="form-control" id="tags"></textarea>
+                      </div>
+                      <div class="form-group">
+                        <label for="project-coordinator-name">Contact Name:</label>
+                        <input type="text" class="form-control" id="project-coordinator-name"></textarea>
+                      </div>
+                      <div class="form-group">
+                        <label for="project-coordinator-email">Contact Email:</label>
+                        <input type="text" class="form-control" id="project-coordinator-email"></textarea>
+                      </div>
+                        <div class="form-group">
+                          <label for="location">Location:</label>
+                          <input type="text" class="form-control" id="location">
+                        </div>
+                        <div class="form-group">
+                          <label for="zipcode">Zipcode:</label>
+                          <input type="text" class="form-control" id="zipcode">
+                        </div>
+                      </div>
+                      <div class="col-md-8">
+                        <div class="form-group">
+                          <label for="description">Description:</label>
+                          <input type="text" class="form-control" id="description">
+                        </div>
+                        <div class="form-group">
+                          <label for="poundage">Pounds produced Annually:</label>
+                          <input type="text" class="form-control" id="poundage">
+                        </div>
+                        <!--<div class="form-group">-->
+                        <div class="input-group">
+                            <input type="checkbox" id="publicly-accessible">
+                           I own this land and give permission for the public to forage here *
+                        </div><!-- /input-group -->
+                        <p>
+                          <button type="submit" class="btn btn-primary pull-right" data-dismiss="modal">Submit</button>
+                        </p>
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <!--<div class="tab-pane fade" id="boroughs-tab">-->
+                <!--<p>Borough data courtesy of <a href="http://www.nyc.gov/html/dcp/html/bytes/meta_dis_nyboroughwi.shtml" target="_blank">New York City Department of City Planning</a></p>-->
+              <!--</div>-->
+              <!--<div class="tab-pane fade" id="subway-lines-tab">-->
+                <!--<p><a href="http://spatialityblog.com/2010/07/08/mta-gis-data-update/#datalinks" target="_blank">MTA Subway data</a> courtesy of the <a href="http://www.urbanresearch.org/about/cur-components/cuny-mapping-service" target="_blank">CUNY Mapping Service at the Center for Urban Research</a></p>-->
+              <!--</div>-->
+              <!--<div class="tab-pane fade" id="theaters-tab">-->
+                <!--<p>Theater data courtesy of <a href="https://data.cityofnewyork.us/Recreation/Theaters/kdu2-865w" target="_blank">NYC Department of Information & Telecommunications (DoITT)</a></p>-->
+              <!--</div>-->
+              <!--<div class="tab-pane fade" id="museums-tab">-->
+                <!--<p>Museum data courtesy of <a href="https://data.cityofnewyork.us/Recreation/Museums-and-Galleries/sat5-adpb" target="_blank">NYC Department of Information & Telecommunications (DoITT)</a></p>-->
+              <!--</div>-->
+            </div>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal addProjectModal -->
+
 
     <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog">
       <div class="modal-dialog modal-lg">
